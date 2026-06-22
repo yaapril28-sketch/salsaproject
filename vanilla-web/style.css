@@ -1,0 +1,189 @@
+/* 
+  Custom Style Sheet untuk NEXUS IoT Smart Home Dashboard
+  Dibuat dengan transisi halus dan efek glow modern.
+*/
+
+/* Custom Transitions & Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+}
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.4);
+  border-radius: 8px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgba(6, 182, 212, 0.2);
+  border-radius: 8px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: rgba(6, 182, 212, 0.4);
+}
+
+/* Glow Text */
+.heading-glow {
+  text-shadow: 0 0 10px rgba(6, 182, 212, 0.3), 
+               0 0 20px rgba(16, 185, 129, 0.1);
+}
+
+/* Glassmorphism Cards */
+.relay-card {
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(8px);
+}
+
+/* Light Ambient Glow (Efek cahaya pendar di belakang ikon lampu) */
+.light-ambient-glow {
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.12) 0%, rgba(16, 185, 129, 0) 70%);
+  opacity: 0;
+  transform: scale(0.6);
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Kategori Glow */
+.relay-card.active-glow {
+  border-color: rgba(16, 185, 129, 0.4) !important;
+  box-shadow: 0 10px 30px rgba(16, 185, 129, 0.08), 
+              0 0 15px rgba(16, 185, 129, 0.12) inset;
+}
+
+.relay-card.active-glow .light-ambient-glow {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Status Glow di Relay */
+#relay-status-1.status-active, 
+#relay-status-2.status-active, 
+#relay-status-3.status-active, 
+#relay-status-4.status-active {
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399 !important;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.2);
+}
+
+/* Active Icon styling */
+.icon-active {
+  background-color: rgba(16, 185, 129, 0.18) !important;
+  color: #10b981 !important;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.4);
+  animation: lampGlowPulse 2.5s infinite alternate;
+}
+
+/* Card Glow DHT Suhu */
+.border-glow-temp:hover {
+  border-color: rgba(239, 68, 68, 0.3) !important;
+  box-shadow: 0 10px 25px rgba(239, 68, 68, 0.07);
+}
+
+/* Card Glow DHT Kelembaban */
+.border-glow-humid:hover {
+  border-color: rgba(16, 185, 129, 0.3) !important;
+  box-shadow: 0 10px 25px rgba(16, 185, 129, 0.07);
+}
+
+/* Animations */
+@keyframes lampGlowPulse {
+  0% {
+    box-shadow: 0 0 8px rgba(16, 185, 129, 0.3);
+    text-shadow: 0 0 4px rgba(16, 185, 129, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.6);
+    text-shadow: 0 0 12px rgba(16, 185, 129, 0.5);
+  }
+}
+
+@keyframes pulseGlowRed {
+  0%, 100% {
+    opacity: 0.8;
+    box-shadow: 0 0 4px rgba(239, 68, 68, 0.3);
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 12px rgba(239, 68, 68, 0.7);
+  }
+}
+
+/* Animations fade in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Custom styling untuk slider input range kustom */
+input[type="range"]::-webkit-slider-thumb {
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(6, 182, 212, 0.5);
+  transition: transform 0.1s;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.25);
+}
+
+/* Efek tombol aktif */
+.btn-on-active {
+  background-color: rgba(16, 185, 129, 0.15) !important;
+  border-color: #10b981 !important;
+  color: #10b981 !important;
+}
+
+.btn-off-active {
+  background-color: rgba(244, 63, 94, 0.15) !important;
+  border-color: #f43f5e !important;
+  color: #f43f5e !important;
+}
+
+/* Toast styling transition */
+.toast-msg {
+  animation: toastIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards,
+             toastOut 0.3s ease 4.7s forwards;
+}
+
+@keyframes toastIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes toastOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.9);
+    display: none;
+  }
+}

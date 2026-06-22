@@ -1,0 +1,10 @@
+{
+  "name": "Smart Home IoT Dashboard",
+  "description": "A highly polished, futuristic and responsive Smart Home IoT dashboard featuring real-time sensor monitoring, multi-relay control, speech recognition voice commands, and Firebase Realtime Database integration.",
+  "requestFramePermissions": [
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

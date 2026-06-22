@@ -1,0 +1,141 @@
+@import "tailwindcss";
+
+@theme {
+  --color-elegant-bg: #050608;
+  --color-elegant-card: #11141b;
+  --color-elegant-cyan: #00f3ff;
+  --color-elegant-red: #ff3e3e;
+  --color-elegant-text-main: #e2e8f0;
+  --color-elegant-text-dim: #94a3b8;
+}
+
+:root {
+  --bg: #050608;
+  --card-bg: #11141b;
+  --accent-cyan: #00f3ff;
+  --accent-red: #ff3e3e;
+  --text-main: #e2e8f0;
+  --text-dim: #94a3b8;
+  --glow-cyan: 0 0 15px rgba(0, 243, 255, 0.4);
+  --glow-red: 0 0 15px rgba(255, 62, 62, 0.4);
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text-main);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Custom class styles matching Elegant Dark precisely */
+.elegant-bg {
+  background-color: #050608 !important;
+}
+
+.elegant-header {
+  background: linear-gradient(to right, #050608, #0f111a) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+.elegant-panel {
+  background-color: #11141b !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  border-radius: 20px !important;
+}
+
+.elegant-section-title-custom {
+  font-size: 12px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1.5px !important;
+  color: #94a3b8 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
+
+.elegant-section-title-custom::after {
+  content: '' !important;
+  flex: 1 !important;
+  height: 1px !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+
+.elegant-sensor-card {
+  background: rgba(0, 0, 0, 0.2) !important;
+  border-radius: 16px !important;
+  border: 1px solid rgba(255, 255, 255, 0.03) !important;
+}
+
+.elegant-sensor-value {
+  color: #ffffff !important;
+}
+
+.elegant-relay-item {
+  background: rgba(255, 255, 255, 0.02) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  border-radius: 16px !important;
+  transition: all 0.3s ease !important;
+}
+
+.elegant-relay-item-active {
+  border-color: #00f3ff !important;
+  background: rgba(0, 243, 255, 0.05) !important;
+  box-shadow: inset 0 0 20px rgba(0, 243, 255, 0.05) !important;
+}
+
+.elegant-relay-icon {
+  background: #1e222d !important;
+}
+
+.elegant-relay-icon-active {
+  background: #00f3ff !important;
+  color: #000000 !important;
+  box-shadow: 0 0 15px rgba(0, 243, 255, 0.4) !important;
+}
+
+.elegant-btn {
+  background: #1e222d !important;
+  color: #94a3b8 !important;
+}
+
+.elegant-btn-on-active {
+  background: #00f3ff !important;
+  color: #000000 !important;
+  box-shadow: 0 0 10px rgba(0, 243, 255, 0.2) !important;
+}
+
+.elegant-btn-off-active {
+  background: #ff3e3e !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 10px rgba(255, 62, 62, 0.2) !important;
+}
+
+.elegant-voice-console {
+  background: #000000 !important;
+  border-radius: 12px !important;
+  border: 1px solid rgba(0, 255, 0, 0.2) !important;
+  color: #00ff00 !important;
+  font-family: 'Courier New', monospace !important;
+}
+
+.elegant-cursor {
+  display: inline-block !important;
+  width: 8px !important;
+  height: 15px !important;
+  background: #00ff00 !important;
+  margin-left: 5px !important;
+  animation: elegant-blink 1s step-end infinite !important;
+}
+
+@keyframes elegant-blink {
+  from, to { background-color: transparent }
+  50% { background-color: #00ff00 }
+}
+
+.elegant-tag {
+  display: inline-block !important;
+  padding: 2px 6.5px !important;
+  border-radius: 4px !important;
+  font-size: 9px !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: #94a3b8 !important;
+}
